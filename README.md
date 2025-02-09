@@ -1,4 +1,4 @@
-# Human-Gorilla-Skeletal-Classification-with-CNN-YOLO
+# A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
  
 ## Figure 1 – Registration and login form:
 ![image](https://github.com/user-attachments/assets/d80ff996-1757-4ef0-ae69-18bd8d6e4233)
