@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  skeleton-analyzer:
+    build: .
+    container_name: skeleton-analyzer-pro
+    volumes:
+      - ./Data:/app/Data:rw   # Map your data folder
+    environment:
+      - PYTHONPATH=/app       # So imports from core/gui work
+    stdin_open: true
+    tty: true

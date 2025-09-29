@@ -1,0 +1,32 @@
+# Core PyTorch (CPU version - lighter)
+torch==2.0.1+cpu
+torchvision==0.15.2+cpu
+torchaudio==2.0.2+cpu
+
+# Computer Vision
+opencv-python==4.8.1.78
+Pillow==10.0.0
+
+# GUI Framework
+PyQt5==5.15.9
+PyQt5-sip==12.12.1
+
+# Database
+pyodbc==4.0.39
+pandas==2.0.3
+
+# Scientific Computing
+numpy==1.24.3
+scipy==1.10.1
+
+# YOLOv5 for object detection
+ultralytics==8.0.186
+
+# Utilities
+pathlib2==2.3.0
+matplotlib==3.7.1
+seaborn==0.12.2
+
+# Optional: Jupyter support if needed
+jupyter==1.0.0
+ipykernel==6.22.0
