@@ -14,15 +14,16 @@ This repository includes:
 - **Docker & docker-compose**: for running in isolated, reproducible environments (especially headless mode).  
 - **Data folders & example images**: to test image/video inference and evaluation.  
 
-### Running the Project (Python):
-# Headless mode
-python main.py --mode headless
+Single Image Inference:
+#### 
+from core.model import SkeletonModel
 
-# GUI mode (requires local display)
-python main.py --mode gui
+model = SkeletonModel()
+model.load_model()
 
-# Auto mode (detects GUI or headless automatically)
-python main.py --mode auto
+result = model.analyze_image("Data/Human_Skeletal/sample.jpg")
+print(result)
+####
 
 
 ---
