@@ -1,4 +1,4 @@
-### A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method.
+# A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
 
 
 #### Description:
