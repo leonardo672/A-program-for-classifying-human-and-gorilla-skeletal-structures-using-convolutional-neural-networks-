@@ -1,10 +1,9 @@
-### A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
+#### A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
 
+#### Description:
 **A Python project for classifying and analyzing human and gorilla skeletal structures using deep learning. Supports headless execution, GUI (PyQt5), Docker, and Jupyter demonstration.** 
 
-#### Description
-
-This repository includes:
+##### This repository includes:
 
 - **Core code**: model inference, preprocessing, evaluation, and database logic (`core/`).  
 - **GUI (PyQt5)**: user-facing interface for loading images & videos and seeing results (`gui/`).  
