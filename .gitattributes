@@ -1,0 +1,8 @@
+# Treat Dockerfile as Docker
+Dockerfile linguist-language=Docker
+
+# Treat YAML files as YAML
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+
+Data/* linguist-vendored
