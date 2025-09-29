@@ -19,33 +19,6 @@ This repository includes:
 
 ---
 
-## 📂 Repository Structure
-
-skeleton-analyzer/
-├── Data/ # Example skeletal datasets
-├── core/ # Core logic: model, config, database, preprocessing, evaluation
-│ ├── config.py
-│ ├── model.py
-│ ├── preprocessing.py
-│ ├── evaluation.py
-│ └── database.py
-│
-├── gui/ # GUI code (PyQt5)
-│ └── app.py
-│
-├── skeleton-analyzer.ipynb # Notebook demonstrating full pipeline
-├── Dockerfile # Docker setup for headless execution
-├── docker-compose.yml # Compose file to run Docker + bind Data
-├── main.py # Entry point (choose headless or GUI mode)
-├── requirements.txt # Python dependencies
-├── .gitattributes # Overrides for GitHub language stats
-├── .gitignore
-└── README.md # This file
-
----
-
-
-
 #### The initial outline of the system before creating the user interfaces:
 <img width="700" height="400" alt="10" src="https://github.com/user-attachments/assets/a6a6265d-c9c1-4dd6-81c6-88ece85064ad" />
 
