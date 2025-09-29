@@ -1,5 +1,8 @@
 ### A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
- 
+
+#### The initial outline of the system before creating the user interfaces:
+<img width="700" height="400" alt="10" src="https://github.com/user-attachments/assets/a6a6265d-c9c1-4dd6-81c6-88ece85064ad" />
+
 #### Figure 1 – Registration and login form:
 ![image](https://github.com/user-attachments/assets/d80ff996-1757-4ef0-ae69-18bd8d6e4233)
 
