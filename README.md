@@ -1,6 +1,6 @@
 ### A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
 
-A project for classifying **human and gorilla skeletal structures** using Convolutional Neural Networks (CNNs) and YOLO, with both GUI and headless modes.  
+##### A project for classifying **human and gorilla skeletal structures** using Convolutional Neural Networks (CNNs) and YOLO, with both GUI and headless modes.  
 
 ---
 
@@ -14,16 +14,7 @@ This repository includes:
 - **Docker & docker-compose**: for running in isolated, reproducible environments (especially headless mode).  
 - **Data folders & example images**: to test image/video inference and evaluation.  
 
-Single Image Inference:
-#### 
-from core.model import SkeletonModel
-
-model = SkeletonModel()
-model.load_model()
-
-result = model.analyze_image("Data/Human_Skeletal/sample.jpg")
-print(result)
-####
+--
 
 
 ---
