@@ -1,8 +1,5 @@
 ### A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
 
-
-# Skeleton Analyzer Pro 🦴
-
 A project for classifying **human and gorilla skeletal structures** using Convolutional Neural Networks (CNNs) and YOLO, with both GUI and headless modes.  
 
 ---
@@ -16,6 +13,49 @@ This repository includes:
 - **Jupyter Notebook**: full pipeline demo and reproducible tutorial (`skeleton-analyzer.ipynb`).  
 - **Docker & docker-compose**: for running in isolated, reproducible environments (especially headless mode).  
 - **Data folders & example images**: to test image/video inference and evaluation.  
+
+## 🛠 Full Setup Instructions
+
+### 1. Clone the Repository
+
+#### git clone https://github.com/leonardo672/A-program-for-classifying-human-and-gorilla-skeletal-structures-using-convolutional-neural-networks-.git 
+#### cd skeleton-analyzer
+
+### 2. Local Python setup (without Docker)
+
+#### Ensure you have Python 3.9+ installed.
+#### (Optional) Create and activate a virtual environment:
+python -m venv venv
+# macOS/Linux
+source venv/bin/activate
+# Windows
+venv\Scripts\activate
+
+### Install Python dependencies:
+pip install -r requirements.txt
+
+## Run the project:
+### Headless mode (no GUI):
+python main.py --mode headless
+
+### GUI mode (requires PyQt5 and local display):
+python main.py --mode gui
+
+### Auto mode (detects GUI or headless automatically):
+python main.py --mode auto
+
+### Using Docker (recommended for reproducibility)
+#### Build the Docker image:
+docker build -t skeleton-analyzer .
+
+#### Start the container with Docker Compose:
+docker-compose up
+
+### Notes:
+#### Your local Data/ folder is mounted into the container automatically.
+#### The container runs in headless mode by default.
+#### This ensures reproducibility and avoids installing dependencies on your machine.
+
 
 ---
 
