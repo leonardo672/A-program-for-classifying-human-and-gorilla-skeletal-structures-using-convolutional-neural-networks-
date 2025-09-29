@@ -4,7 +4,7 @@ A project for classifying **human and gorilla skeletal structures** using Convol
 
 ---
 
-## 📋 Description
+### 📋 Description
 
 This repository includes:
 
@@ -14,10 +14,16 @@ This repository includes:
 - **Docker & docker-compose**: for running in isolated, reproducible environments (especially headless mode).  
 - **Data folders & example images**: to test image/video inference and evaluation.  
 
-## Clone the Repository:
-git clone https://github.com/leonardo672/A-program-for-classifying-human-and-gorilla-skeletal-structures-using-convolutional-neural-networks-.git 
+### Running the Project (Python):
+# Headless mode
+python main.py --mode headless
 
-cd skeleton-analyzer
+# GUI mode (requires local display)
+python main.py --mode gui
+
+# Auto mode (detects GUI or headless automatically)
+python main.py --mode auto
+
 
 ---
 
