@@ -1,4 +1,134 @@
-### A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and the You Only Look Once (YOLO) method
+### **A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and You Only Look Once (YOLO) method.**
+
+#### Description:
+A Python project for classifying and analyzing human and gorilla skeletal structures using deep learning. 
+Supports headless execution, GUI (PyQt5), Docker, and Jupyter demonstration. 
+
+**This repository includes:**
+- **Core code**: model inference, preprocessing, evaluation, and database logic (`core/`).  
+- **GUI (PyQt5)**: user-facing interface for loading images & videos and seeing results (`gui/`).  
+- **Jupyter Notebook**: full pipeline demo and reproducible tutorial (`skeleton-analyzer.ipynb`).  
+- **Docker & docker-compose**: for running in isolated, reproducible environments (especially headless mode).  
+- **Data folders & example images**: to test image/video inference and evaluation.  
+
+#### Install Project Dependencies
+``` 
+pip install --upgrade pip
+pip install -r requirements.txt 
+```
+
+#### Running the Project (Python)
+```# Headless mode
+python main.py --mode headless
+
+# GUI mode (requires local display)
+python main.py --mode gui
+
+# Auto mode (detects GUI or headless automatically)
+python main.py --mode auto
+```
+**Note:**
+Headless mode is suitable for servers, CI/CD pipelines, or testing without a display.
+GUI mode requires PyQt5 and a local display environment.
+
+#### Docker Setup
+##### 1. Build the Docker Image:
+
+The ``` Dockerfile```  defines a reusable image called ```skeleton-analyzer```. To build it:
+
+``` 
+# From the project root directory
+docker-compose build
+``` 
+This will:
+- Install Python dependencies (```requirements.txt```).
+- Set up the project structure.
+- Prepare the image for headless execution.    
+After building, the image will be reusable and stored locally.  
+##### 2. Run the Project in a Container: 
+To run the project in headless mode inside a container:
+``` 
+docker-compose run skeleton-analyzer 
+``` 
+**What this does:**
+- Creates a container from the skeleton-analyzer image.
+- Mounts your local Data/ folder into /app/Data in the container.
+- Runs the project in headless mode.
+- Prints environment validation, available evaluations, and skeletal images.    
+
+##### 3. Optional: Running GUI Mode:
+Running GUI inside Docker is not recommended for Windows without additional setup (X11, VNC). For GUI testing, it’s easier to run the project locally using Python:
+``` 
+python main.py --mode gui
+``` 
+**Note:** For full demonstration, the Jupyter notebook (skeleton-analyzer.ipynb) provides a complete GUI-like layout and workflow. You can use it to test the GUI and pipeline without running the PyQt5 application inside Docker.
+
+
+##### 4. Stop and Remove Containers:   
+After testing, you can remove containers while keeping the image reusable:
+``` 
+docker-compose down
+``` 
+Your ``` skeleton-analyzer``` image remains locally and can be reused to create new containers.
+ 
+#### Testing the Project
+
+##### 1. Test single Image Inference:
+```
+from core.model import SkeletonModel
+model = SkeletonModel()
+model.load_model()
+result = model.analyze_image("Data/Human_Skeletal/sample.jpg")
+print(result['predictions'])
+```
+
+##### 2. Test batch Image Inference:
+```
+from core.preprocessing import ImageManager
+image_paths = ImageManager.get_skeletal_images('human')
+for img_path in image_paths:
+    result = model.analyze_image(img_path)
+    print(result['predictions'])
+
+```
+##### 3. Test video Inference:
+```
+detections = model.analyze_video("Data/sample_video.mp4")
+print(f"Total detections: {len(detections)}")
+
+```
+##### 4. Test model Evaluation Utilities:
+```
+from core.evaluation import ModelEvaluator
+available = ModelEvaluator.get_available_evaluations()
+print(available)
+
+for eval_type in available:
+    images = ModelEvaluator.get_evaluation_images(eval_type)
+    print(f"{eval_type}: {len(images)} images")
+
+```
+##### 5. Test GUI (PyQt5):
+```
+from gui.app import run_gui
+run_gui()
+
+```
+GUI allows image/video selection, evaluation display, and login management.
+
+
+#### 📒 Jupyter Notebook (skeleton-analyzer.ipynb)
+##### The file skeleton-analyzer.ipynb demonstrates the full pipeline in one place: 
+- Load skeletal datasets.
+- Run training and inference.
+- Generate evaluation metrics and plots.
+- Perform image & video analysis.     
+
+👉 This notebook serves as a tutorial / reproducibility showcase.
+
+
+
+---
 
 #### The initial outline of the system before creating the user interfaces:
 <img width="700" height="400" alt="10" src="https://github.com/user-attachments/assets/a6a6265d-c9c1-4dd6-81c6-88ece85064ad" />
