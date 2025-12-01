@@ -2,10 +2,10 @@ name: Build and Publish Docker Image
 
 on:
   push:
-    branches: [ "main" ]     # Runs when pushing to main
+    branches: [ "main" ]          # Push to main triggers push+build
   pull_request:
-    branches: [ "main" ]     # Runs when creating PRs into main
-  workflow_dispatch:          # Manual trigger
+    branches: [ "main" ]          # PR to main triggers build only
+  workflow_dispatch:               # Manual trigger
 
 jobs:
   build:
@@ -17,14 +17,26 @@ jobs:
       id-token: write
 
     steps:
+      # Step 1: Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Build and Push Docker Image
-        uses: mr-smithers-excellent/docker-build-push@v4
-        with:
-          image: ghcr.io/${{ github.repository_owner }}/skeleton-analyzer
-          registry: ghcr.io
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-          tags: latest, ${{ github.sha }}
+      # Step 2: Build Docker image (latest)
+      - name: Build Docker Image (latest)
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/skeleton-analyzer:latest .
+
+      # Step 3: Build Docker image (commit SHA)
+      - name: Build Docker Image (commit SHA)
+        if: github.event_name == 'push' || github.event_name == 'pull_request'
+        run: |
+          docker build -t ghcr.io/${{ github.repository_owner }}/skeleton-analyzer:${{ github.sha }} .
+
+      # Step 4: Push Docker images (ONLY on push to main)
+      - name: Push Docker Images
+        if: github.event_name == 'push'
+        run: |
+          echo ${{ secrets.DOCKER_PASSWORD }} | docker login ghcr.io -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
+          docker push ghcr.io/${{ github.repository_owner }}/skeleton-analyzer:latest
+          docker push ghcr.io/${{ github.repository_owner }}/skeleton-analyzer:${{ github.sha }}
