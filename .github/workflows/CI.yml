@@ -38,3 +38,4 @@ jobs:
           echo ${{ secrets.DOCKER_PASSWORD }} | docker login ghcr.io -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
           docker push ghcr.io/${{ github.repository_owner }}/a-human-gorilla-skeleton-cnn:latest
           docker push ghcr.io/${{ github.repository_owner }}/a-human-gorilla-skeleton-cnn:${{ github.sha }}
+
