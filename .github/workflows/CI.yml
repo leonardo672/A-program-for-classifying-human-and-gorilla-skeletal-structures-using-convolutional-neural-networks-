@@ -37,3 +37,4 @@ jobs:
         run: |
           docker push homams/reo:latest
           docker push homams/reo:skeleton-analyzer-${{ github.sha }}
+
