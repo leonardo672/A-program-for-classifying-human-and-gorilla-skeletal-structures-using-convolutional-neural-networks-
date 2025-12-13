@@ -1,15 +1,41 @@
-### **A program for classifying human and gorilla skeletal structures using convolutional neural networks (CNN) and You Only Look Once (YOLO) method.**
+### **A-human-gorilla-skeleton-cnn**
 
 #### Description:
-A Python project for classifying and analyzing human and gorilla skeletal structures using deep learning. 
-Supports headless execution, GUI (PyQt5), Docker, and Jupyter demonstration. 
+A Python project for classifying and analyzing human and gorilla skeletal structures using deep learning.  
+Supports headless execution, GUI (PyQt5), Docker, and Jupyter-based experimentation.
 
-**This repository includes:**
+---
+
+### **⚙ Primary Execution Environment**
+
+This project is **primarily designed to be executed and demonstrated in a Jupyter Notebook environment**.
+
+The Jupyter implementation represents the **reference and stable execution flow** used for:
+- New skeletal pattern recognition
+- Dataset exploration and testing
+- Model validation and comparison
+- End-to-end pipeline demonstration and reproducibility
+
+-----
+
+### **🐳 Docker Execution Note**
+A Docker-based pipeline is included to illustrate the intended deployment architecture.
+However, due to upstream compatibility constraints between YOLOv5, PyTorch, and the Ultralytics package, container execution may require additional version alignment or dependency pinning depending on the runtime environment.
+
+This limitation **does not affect:**
+- The core project logic.
+- The model architecture or trained weights.
+- The Jupyter-based execution (reference implementation).
+
+---
+
+### **This repository includes:**
 - **Core code**: model inference, preprocessing, evaluation, and database logic (`core/`).  
-- **GUI (PyQt5)**: user-facing interface for loading images & videos and seeing results (`gui/`).  
+- **GUI (PyQt5)**: user-facing interface for loading images & videos and visualizing results (`gui/`).  
 - **Jupyter Notebook**: full pipeline demo and reproducible tutorial (`skeleton-analyzer.ipynb`).  
-- **Docker & docker-compose**: for running in isolated, reproducible environments (especially headless mode).  
-- **Data folders & example images**: to test image/video inference and evaluation.  
+- **Docker & docker-compose**: isolated execution for headless and deployment-oriented use cases.  
+- **Data folders & example images**: for testing inference and evaluation workflows.
+
 
 #### Install Project Dependencies
 ``` 
