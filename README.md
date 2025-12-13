@@ -4,7 +4,7 @@
 A Python project for classifying and analyzing human and gorilla skeletal structures using deep learning.  
 Supports headless execution, GUI (PyQt5), Docker, and Jupyter-based experimentation.
 
-#### **⚙ Primary Execution Environment**
+#### ⚙ Primary Execution Environment
 This project is **primarily designed to be executed and demonstrated in a Jupyter Notebook environment**.
 The Jupyter implementation represents the **reference and stable execution flow** used for:
 - New skeletal pattern recognition
@@ -14,7 +14,7 @@ The Jupyter implementation represents the **reference and stable execution flow*
 
 -----
 
-#### **🐳 Docker Execution Note**
+#### 🐳 Docker Execution Note
 A Docker-based pipeline is included to illustrate the intended deployment architecture.
 However, due to upstream compatibility constraints between YOLOv5, PyTorch, and the Ultralytics package, container execution may require additional version alignment or dependency pinning depending on the runtime environment.
 This limitation **does not affect:**
