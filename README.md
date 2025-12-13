@@ -1,6 +1,6 @@
 ### **A-human-gorilla-skeleton-cnn**
 
-#### Description:
+#### Description
 A Python project for classifying and analyzing human and gorilla skeletal structures using deep learning.  
 Supports headless execution, GUI (PyQt5), Docker, and Jupyter-based experimentation.
 
