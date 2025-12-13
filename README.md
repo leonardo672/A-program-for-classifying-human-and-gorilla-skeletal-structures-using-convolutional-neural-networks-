@@ -4,8 +4,6 @@
 A Python project for classifying and analyzing human and gorilla skeletal structures using deep learning.  
 Supports headless execution, GUI (PyQt5), Docker, and Jupyter-based experimentation.
 
----
-
 ### **⚙ Primary Execution Environment**
 
 This project is **primarily designed to be executed and demonstrated in a Jupyter Notebook environment**.
